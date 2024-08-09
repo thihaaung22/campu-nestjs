@@ -8,6 +8,10 @@ import { CreateSuperUserInterface } from './interfaces/create.superuser.interfac
 export class SuperUserService {
     constructor(@InjectRepository(SuperUser) private repository: Repository<SuperUser>) { }
 
+    findOne(email: string) {
+        return this.repository.findOne({ where: { email } })
+    }
+
     createSuperUser(user: CreateSuperUserInterface) {
         return this.repository.save(user)
     }

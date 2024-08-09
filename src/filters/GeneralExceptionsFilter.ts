@@ -8,6 +8,8 @@ export class GeneralExceptionsFilter implements ExceptionFilter {
         const response = ctx.getResponse();
         const request = ctx.getRequest();
 
+        console.log(exceptiom)
+
         const { status, message, error } = this.transformException(exceptiom)
 
         response.status(status).json({

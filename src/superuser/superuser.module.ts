@@ -6,7 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
     imports: [TypeOrmModule.forFeature([SuperUser])],
+    controllers: [SuperUserController],
     providers: [SuperUserService],
-    controllers: [SuperUserController]
+    exports: [SuperUserService]
 })
 export class SuperUserModule { }
